@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Google Maps Lead Scraper",
+  "version": "1.0.0",
+  "description": "Scrape business data from Google Maps with email extraction",
+  "permissions": [
+    "storage",
+    "webRequest",
+    "tabs",
+    "activeTab",
+    "downloads"
+  ],
+  "host_permissions": [
+    "*://*.google.com/maps/*",
+    "*://*.google.*/*/maps/*",
+    "https://g2.converts.workers.dev/*",
+    "https://plus.codes/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/maps/search/*/*",
+        "*://*.google.*/*/maps/search/**"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["*.css", "*.js"],
+      "matches": ["*://*.google.com/*"]
+    }
+  ]
+}
