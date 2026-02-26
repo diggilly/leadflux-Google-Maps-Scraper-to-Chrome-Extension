@@ -5,7 +5,6 @@
   "description": "Scrape business data from Google Maps with email extraction",
   "permissions": [
     "storage",
-    "webRequest",
     "tabs",
     "activeTab",
     "downloads"
@@ -16,9 +15,6 @@
     "https://g2.converts.workers.dev/*",
     "https://plus.codes/*"
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": [
@@ -27,7 +23,8 @@
       ],
       "js": ["content.js"],
       "css": ["styles.css"],
-      "run_at": "document_end"
+      "run_at": "document_end",
+      "world": "MAIN"
     }
   ],
   "action": {
