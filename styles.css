@@ -1,0 +1,39 @@
+/* styles.css */
+.scraper-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.scraper-btn-primary {
+  background: #4285f4;
+  color: white;
+}
+
+.scraper-btn-secondary {
+  background: #f1f3f4;
+  color: #3c4043;
+}
+
+.scraper-btn-danger {
+  background: #ea4335;
+  color: white;
+}
+
+.scraper-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.countdown-display {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
